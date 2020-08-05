@@ -17,11 +17,10 @@ router.get("/", function (req, res) {
 
 // create new burger route
 router.post("/api/burgers", function (req, res) {
-    burger.create([
-        "name"
-    ], [
-        req.body.name
-    ], function (result) {
+    burger.create(
+        "name",
+        req.body.name, 
+        function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
@@ -44,3 +43,5 @@ router.put("/api/burgers/:id", function (req, res) {
         }
     });
 });
+
+module.exports = router;
