@@ -12,14 +12,14 @@ router.get("/", function (req, res) {
         };
         console.log(hbsObject);
         res.render("index", hbsObject);
-    });
+    }); 
 });
 
 // create new burger route
 router.post("/api/burgers", function (req, res) {
     burger.create(
-        "name",
-        req.body.name, 
+        "burger_name",
+        [req.body.name], 
         function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });

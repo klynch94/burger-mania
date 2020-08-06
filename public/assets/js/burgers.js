@@ -24,7 +24,7 @@ $(function() {
     event.preventDefault();
 
     let newBurger = {
-      name: $("#ca").val().trim(),
+      name: $("#newBurger").val().trim(),
     };
 
     // Send the POST request.
@@ -35,7 +35,7 @@ $(function() {
       function() {
         console.log("created new burger");
         // Reload the page to get the updated list
-        location.reload();
+         location.reload();
       }
     );
   });
