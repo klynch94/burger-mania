@@ -1,38 +1,45 @@
-<h1>Burgers Mania!</h1>
+<header>
+  <h1>Burger Mania!</h1>
+</header>
 
-<h2>Burgers that you want to devour!!</h2>
 
-<main>
-  <div id="notDevouredBurgers">
-    <ul>
-      {{#each burgers}}
-      {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-      {{/unless}}
-      {{/each}}
-    </ul>
+<main id="mainContain">
+  <img src="/assets/img/burger.png">
+
+  <div class="row">
+      <div id="notDevouredBurgers" class="col">
+      <h2>Burgers that you want to devour</h2>
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+  
+      <div id="devouredBurgers" class="col">
+        <h2>Burgers that you devoured</h2>
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
   </div>
+  
 
-  <div id="devouredBurgers">
-    <h2>Burgers that are devoured!</h2>
-    <ul>
-      {{#each burgers}}
-      {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-      {{/if}}
-      {{/each}}
-    </ul>
-  </div>
+
+  <h2>Add a new Burger</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="ca">Burger Name:</label>
+      <input type="text" id="newBurger" name="name">
+    </div>
+
+    <button class="btn btn-secondary" type="submit">Add Burger</button>
+  </form>
 </main>
-
-
-<h2>Add a new Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="newBurger" name="name">
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>

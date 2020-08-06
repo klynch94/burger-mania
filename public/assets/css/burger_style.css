@@ -1,0 +1,23 @@
+body {
+    background-color: rgb(240, 186, 138);
+}
+
+img {
+    width: 150px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#mainContain {
+    text-align: center;
+}
+
+ul {
+    list-style-type:none
+}
+
+button {
+    margin: 3px;
+}
